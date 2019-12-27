@@ -1,4 +1,4 @@
-image: /home/hierarch/catkin_ws_Multi-robots/Map/map.pgm
+image: Map/map.pgm
 resolution: 0.050000
 origin: [0.000000, 0.000000, -nan]
 negate: 0
