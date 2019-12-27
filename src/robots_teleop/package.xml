@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robots_teleop</name>
+  <version>1.2.1</version>
+  <description>
+    Provides teleoperation using keyboard for robots.
+  </description>
+  <license>BSD</license>
+
+  <author email="1291004667@qq.com">HSG</author>
+  <maintainer email="1291004667@qq.com">HSG</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>geometry_msgs</depend>
+</package>

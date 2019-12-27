@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+
+<package format="2">
+  <name>sensor_driver_msgs</name>
+  <version>0.2.0</version>
+  <description>
+    ROS messages for the sensor_driver_ros package.
+  </description>
+  <maintainer email="jikaijin94@gmail.com">
+    The Cartographer Authors
+  </maintainer>
+  <license>Apache 2.0</license>
+
+  <url>https://github.com/googlesensor_driver/sensor_driver_ros</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  
+  <build_depend>message_generation</build_depend>
+</package>

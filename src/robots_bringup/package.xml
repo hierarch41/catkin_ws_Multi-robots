@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robots_bringup</name>
+  <version>1.2.1</version>
+  <description>
+    roslaunch scripts for starting the robots
+  </description>
+  <license>Apache 2.0</license>
+  <author email="1291004667@qq.com">HSG</author>
+  <maintainer email="1291004667@qq.com">HSG</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>diagnostic_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>robots_msgs</depend>
+  <exec_depend>robots_description</exec_depend>
+  <exec_depend>robots_teleop</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rosserial_python</exec_depend>
+  <exec_depend>hls_lfcd_lds_driver</exec_depend>
+  <!-- <exec_depend>realsense_camera</exec_depend> for TurtleBot3 Waffle using Intel RealSense Camera -->
+  <!-- <exec_depend>raspicam_node</exec_depend> for TurtleBot3 Waffle Pi using Raspberry Pi Camera -->
+</package>

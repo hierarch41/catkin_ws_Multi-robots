@@ -1,0 +1,9 @@
+    float64 time_stamp
+    Points point
+    float32 v_x
+    float32 v_y
+    float32 acc_x
+    float32 acc_y
+    float32 pos_head
+    float32 v_w
+    int16 confidence_level

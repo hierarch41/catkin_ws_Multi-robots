@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robots_gazebo</name>
+  <version>1.2.0</version>
+  <description>
+    Gazebo simulation package for the Multi-robots
+  </description>
+  <license>Apache 2.0</license>
+  <author email="1291004667@qq.com">HSG</author>
+  <maintainer email="1291004667@qq.com">HSG</maintainer>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf</depend>
+  <depend>gazebo_ros</depend>
+  <exec_depend>gazebo</exec_depend>
+  <export>
+    <gazebo_ros gazebo_media_path="${prefix}" gazebo_model_path="${prefix}/models:${prefix}/models/robots_autorace"/>
+  </export>
+</package>

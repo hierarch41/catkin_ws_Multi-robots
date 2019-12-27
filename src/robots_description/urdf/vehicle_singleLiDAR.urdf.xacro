@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="vehicle" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <!--link
+    name="base_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehicle/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehicle/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link-->
+  <link
+    name="base_link"/>
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="0 0 2"
+        rpy="0 0 0" />
+      <mass
+        value="1020" />
+      <inertia
+        ixx="1310"
+        ixy="-4.5898"
+        ixz="-6.4037"
+        iyy="15481"
+        iyz="-765.78"
+        izz="5698.5" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link_connection"
+    type="fixed">
+    <origin
+      xyz="-0.0014967 2.3251 -0.048125"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="chassis" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="2.1476E-07 -1.7776E-06 -0.14199"
+        rpy="0 0 0" />
+      <mass
+        value="110.44" />
+      <inertia
+        ixx="6.0553"
+        ixy="-1.4262E-05"
+        ixz="2.0423E-05"
+        iyy="6.0552"
+        iyz="2.6023E-06"
+        izz="10.742" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_joint"
+    type="continuous">
+    <origin
+      xyz="1.491 0.81576 0.17243"
+      rpy="-1.5708 1.49 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_left_wheel">
+    <inertial>
+      <origin
+        xyz="-1.0487E-07 -1.74E-06 -0.14199"
+        rpy="0 0 0" />
+      <mass
+        value="110.44" /> 
+      <inertia
+        ixx="6.0553"
+        ixy="-1.0705E-05"
+        ixz="1.8345E-05"
+        iyy="6.0553"
+        iyz="2.9158E-06"
+        izz="10.742" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/rear_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/rear_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_joint"
+    type="continuous">
+    <origin
+      xyz="-1.553 0.81576 0.17243"
+      rpy="1.5708 0.57871 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="rear_left_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="front_right_wheel">
+    <inertial>
+      <origin
+        xyz="2.4579E-08 -1.4767E-06 -0.14199"
+        rpy="0 0 0" />
+      <mass
+        value="110.44" />
+      <inertia
+        ixx="6.0553"
+        ixy="-1.1017E-05"
+        ixz="1.8997E-05"
+        iyy="6.0552"
+        iyz="5.1083E-06"
+        izz="10.742" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/front_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_joint"
+    type="continuous">
+    <origin
+      xyz="1.491 -0.81576 0.17243"
+      rpy="-1.5708 -0.13053 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="front_right_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_right_wheel">
+    <inertial>
+      <origin
+        xyz="-9.3655E-08 -1.2118E-06 -0.14199"
+        rpy="0 0 0" />
+      <mass
+        value="110.44" />
+      <inertia
+        ixx="6.0553"
+        ixy="-9.8279E-06"
+        ixz="1.796E-05"
+        iyy="6.0552"
+        iyz="7.0744E-06"
+        izz="10.742" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/rear_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robots_description/meshes/rear_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_joint"
+    type="continuous">
+    <origin
+      xyz="-1.553 -0.81576 0.17243"
+      rpy="1.5708 -0.027344 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="rear_right_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+ <!-- Sensor link and joint -->
+  <!-- LiDAR link and joint -->
+  <joint name="scan_joint" type="fixed">
+    <parent link="chassis"/>
+    <child link="base_scan"/>
+    <origin xyz="-0.8 0 1.4" rpy="0 0 0"/>
+  </joint>
+  <link name="base_scan">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robots_description/meshes/sensors/lds.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.0315" radius="0.055"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.114" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001" />
+    </inertial>
+  </link>
+  <!-- IMU link and joint -->
+  <joint name="imu_joint" type="fixed">
+    <parent link="chassis"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="imu_link"/>
+  <!-- GPS link and joint -->
+  <joint name="gps_joint" type="fixed">
+    <parent link="chassis"/>
+    <child link="gps_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="gps_link"/>
+  <!-- Camera link and joint -->
+
+  <!-- UWB link and joint -->
+
+                                <!-- Drive controller -->
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftFrontJoint>front_left_joint</leftFrontJoint>
+    <rightFrontJoint>front_right_joint</rightFrontJoint>
+    <leftRearJoint>rear_left_joint</leftRearJoint>
+    <rightRearJoint>rear_right_joint</rightRearJoint>
+    <wheelSeparation>2.408</wheelSeparation>
+    <wheelDiameter>0.80685</wheelDiameter>
+    <torque>10000000</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <broadcastTF>1</broadcastTF>
+  </plugin>
+</gazebo>
+<gazebo>
+  <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>50.0</updateRate>
+    <bodyName>base_link</bodyName>
+    <topicName>groundtruth/state</topicName>
+    <gaussianNoise>0.0</gaussianNoise>
+    <frameName>world</frameName>
+    <xyzOffsets>0 0 0</xyzOffsets>
+    <rpyOffsets>0 0 0</rpyOffsets>
+  </plugin>
+</gazebo>                                 <!-- Sensor settings -->
+  <!-- IMU settings -->
+  <gazebo> 
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>imu_link</bodyName>
+      <frameName>imu_link</frameName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>200</updateRate>
+      <imu>
+        <noise>
+          <type>gaussian</type>
+          <rate>
+            <mean>0.0</mean>
+            <stddev>2e-4</stddev>
+            <bias_mean>0.0000075</bias_mean>
+            <bias_stddev>0.0000008</bias_stddev>
+          </rate>
+          <accel>
+            <mean>0.0</mean>
+            <stddev>1.7e-2</stddev>
+            <bias_mean>0.1</bias_mean>
+            <bias_stddev>0.001</bias_stddev>
+          </accel>
+        </noise>
+      </imu>
+    </plugin>
+  </gazebo>
+  <!-- Camera settings -->
+
+  <!-- LiDAR settings -->
+  <gazebo reference="base_scan">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="ray" name="lds_lfcd_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>6.28319</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.3</min>
+          <max>50</max>
+          <resolution>0.001</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>base_scan</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- GPS settings -->
+  <gazebo>
+      <plugin name="gps" filename="libhector_gazebo_ros_gps.so">  
+          <updateRate>10.0</updateRate>  
+          <topicName>sensor_msgs/NavSatFix</topicName>  
+          <gaussianNoise>0.0 0.0 0.0</gaussianNoise>  
+          <offset>0 0 0</offset>  
+          <velocityGaussianNoise>0 0 0</velocityGaussianNoise>  
+          <frameId>steerbot_footprint</frameId>  
+      </plugin> 
+  </gazebo>
+  <!-- UWB settings -->
+</robot>

@@ -1,0 +1,13 @@
+    int32 line_num
+    Points[] line_point
+    Points center_point
+    float32 object_high
+    int32 object_type
+    int32 ID_number
+    bool is_updated
+    int32  tracked_times
+    int32  dangerous_level
+    int32  history_num
+    History_traj[] history_traj
+    int32  predict_num
+    Predict_traj[] predict_traj       

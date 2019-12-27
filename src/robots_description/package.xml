@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robots_description</name>
+  <version>1.2.1</version>
+  <description>
+    3D models of the Multi-robots for simulation and visualization
+  </description>
+  <license>Apache 2.0</license>
+  <author email="1291004667@qq.com">HSG</author>
+  <maintainer email="1291004667@qq.com">HSG</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+</package>
