@@ -49,7 +49,7 @@ source devel/setup.bash
 
 打开matlab：cd ~/Software/matlab/bin
 
-						sudo ./matlab
+sudo ./matlab
 
 
 
